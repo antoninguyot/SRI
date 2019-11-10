@@ -1,7 +1,6 @@
 @extends('layouts.panel')
 
-@section('title', 'Page de test')
+@section('title', 'Service des relations internationales')
 @section('content')
-    <h1>hello world</h1>
 @endsection
 

@@ -15,8 +15,12 @@ class CreateStudiesTable extends Migration
     {
         Schema::create('studies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->string('name');
+            $table->integer('ects')->nullable();
+            $table->integer('duration')->nullable();
+            $table->string('university')->default(config('app.university'));
+            $table->string('country');
+            $table->timestamps();
         });
     }
 

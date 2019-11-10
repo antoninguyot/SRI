@@ -27,14 +27,39 @@
                 </a>
                 <div class="navbar-content">
                     <div class="search-form">
-                        <p>Bonjour, Amal Bendaoud</p>
+                        <p>Bonjour, {{ Auth()->user()->name }}</p>
                     </div>
                     <ul class="navbar-nav">
-                        <li class="nav-item nav-profile">
-                            <a class="nav-link dropdown-toggle" href="#" role="button">
-                                <img src=""
-                                     alt="profile">
+                        <li class="nav-item dropdown nav-profile">
+                            <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="{{ asset('images/user.png')  }}" alt="profile">
                             </a>
+                            <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                                <div class="dropdown-header d-flex flex-column align-items-center">
+                                    <div class="figure mb-3">
+                                        <img src="{{ asset('images/user.png') }}" alt="">
+                                    </div>
+                                    <div class="info text-center">
+                                        <p class="name font-weight-bold mb-0">{{ Auth()->user()->name ?? '' }}</p>
+                                        <p class="email text-muted mb-3">{{ Auth()->user()->email ?? '' }}</p>
+                                    </div>
+                                </div>
+                                <div class="dropdown-body">
+                                    <ul class="profile-nav p-0 pt-3">
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0);" onclick="document.forms.logout.submit()"
+                                               class="nav-link">
+                                                <i data-feather="log-out"></i>
+                                                <span>Déconnexion</span>
+                                            </a>
+                                        </li>
+                                        <form id="logout" action="{{ route('logout') }}" method="post">
+                                            @csrf
+                                        </form>
+                                    </ul>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>

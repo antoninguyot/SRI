@@ -15,10 +15,9 @@ class CreateExchangesTable extends Migration
     {
         Schema::create('exchanges', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->unsignedBigInteger('study_id');
             $table->unsignedBigInteger('student_id');
-            $table->integer('duration');
+            $table->timestamps();
         });
     }
 

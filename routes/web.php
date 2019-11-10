@@ -11,6 +11,16 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('dashboard')->middleware('auth');
+
+Route::resource('news', 'NewsController');
+Route::resource('studies', 'StudyController');
+Route::resource('students', 'StudentController');
+Route::resource('exchanges', 'ExchangeController');
