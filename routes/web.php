@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('dashboard')->middleware('auth');
+Route::get('dashboard', 'DashboardController@show')->name('dashboard');
 
 Route::resource('news', 'NewsController');
 Route::resource('studies', 'StudyController');
