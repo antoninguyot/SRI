@@ -18,7 +18,7 @@
                         <th>Étudiant</th>
                         <th>Formation</th>
                         <th>Dispensée par</th>
-                        <th>Durée (jours)</th>
+                        <th>Durée (heures)</th>
                         <th></th>
                     </tr>
                     </thead>
