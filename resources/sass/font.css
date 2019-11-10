@@ -22,6 +22,21 @@
     height: 32px;
 }
 
+.feather-48{
+    width: 48px;
+    height: 48px;
+}
+
+.feather-64{
+    width: 64px;
+    height: 64px;
+}
+
+.feather-128{
+    width: 128px;
+    height: 128px;
+}
+
 .feather {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'feather' !important;

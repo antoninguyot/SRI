@@ -1,5 +1,3 @@
-// import PerfectScrollbar from "perfect-scrollbar";
-
 (function($) {
   'use strict';
   $(function() {
@@ -40,14 +38,6 @@
       });
     }
 
-
-    // Applying perfect-scrollbar
-    // if ($('.sidebar .sidebar-body').length) {
-    //   const sidebarBodyScroll = new PerfectScrollbar('.sidebar-body');
-    // }
-    // if ($('.content-nav-wrapper').length) {
-    //   const contentNavWrapper = new PerfectScrollbar('.content-nav-wrapper');
-    // }
 
     // Sidebar toggle to sidebar-folded
     $('.sidebar-toggler').on('click', function(e) {

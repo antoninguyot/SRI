@@ -13,3 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+
+// SimpleMDE (WYSIWYG editor)
+mix.js('resources/js/simplemde.js', 'public/js')
+    .sass('resources/sass/simplemde.scss', 'public/css');
