@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/', function(){
+    return view('welcome');
+});
+
 Route::get('dashboard', 'DashboardController@show')->name('dashboard');
 
 Route::resource('news', 'NewsController');

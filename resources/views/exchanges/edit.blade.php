@@ -3,7 +3,7 @@
 @section('title', 'Modifier un échange')
 
 @section('content')
-    <form action="{{ route('exchanges.update', $study->id) }}" method="post">
+    <form action="{{ route('exchanges.update', $exchange->id) }}" method="post">
         @csrf
         @method('patch')
 

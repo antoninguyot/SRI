@@ -25,7 +25,9 @@ class ExchangeRequest extends FormRequest
     {
         return [
             'student_id' => ['required', 'exists:students,id'],
-            'study_id' => ['required', 'exists:studies,id']
+            'study_id' => ['required', 'exists:studies,id'],
+            'begins_at' => ['date_format:d/m/Y'],
+            'endss_at' => ['date_format:d/m/Y'],
         ];
     }
 }

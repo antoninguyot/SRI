@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class ExchangeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -59,7 +64,7 @@ class ExchangeController extends Controller
         $students = Student::all();
         $studies = Study::all();
 
-        return view('exchanges.create', compact('students', 'studies', 'exchange'));
+        return view('exchanges.edit', compact('students', 'studies', 'exchange'));
     }
 
     /**
@@ -73,7 +78,7 @@ class ExchangeController extends Controller
     {
         $exchange->update($request->all());
 
-        return redirect(route('exchanges.index'));
+        return redirect(route('exchanges.edit', $exchange->id))->with('success', 'Échange modifié avec succès.');
     }
 
     /**
