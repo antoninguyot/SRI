@@ -17,8 +17,8 @@ class CreateExchangesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('study_id');
             $table->unsignedBigInteger('student_id');
-            $table->date('begins_at');
-            $table->date('ends_at');
+            $table->string('begins_at');
+            $table->string('ends_at');
             $table->timestamps();
         });
     }
