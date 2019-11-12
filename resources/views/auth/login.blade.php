@@ -15,10 +15,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 pl-md-0">
-                                    <div class="auth-form-wrapper px-4 py-5">
-{{--                                        <a href="#" class="d-block mb-2">--}}
-{{--                                            <img src="{{ asset('images/logo.png') }}" class="img-fluid w-50">--}}
-{{--                                        </a>--}}
+                                    <div class="auth-form-wrapper px-4 py-4">
                                         <h5 class="text-muted font-weight-normal mb-4">Connectez vous pour accéder à l'interface SRI</h5>
                                         <form method="post" action="{{ route('login') }}">
                                             @csrf

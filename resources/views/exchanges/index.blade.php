@@ -19,13 +19,14 @@
                         <th>Formation</th>
                         <th>Dispensée par</th>
                         <th>Durée (heures)</th>
+                        <th>Statut</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
                     @if($exchanges->isEmpty())
                         <tr>
-                            <td colspan="5" class="text-center">
+                            <td colspan="6" class="text-center">
                                 Aucun échange pour l'instant... Ajoutez-en un maintenant.
                             </td>
                         </tr>
@@ -36,6 +37,7 @@
                             <td>{{ $exchange->study->name }}</td>
                             <td>Université Paris 13</td>
                             <td>{{ $exchange->study->duration }}</td>
+                            <td>{!! $exchange->badge !!}</td>
                             <td class="text-right w-10">
                                 <a href="{{ route('exchanges.edit', $exchange->id) }}" class="btn btn-primary">
                                     <i class="feather-16" data-feather="edit"></i> Modifier
