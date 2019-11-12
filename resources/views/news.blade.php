@@ -17,7 +17,9 @@
                     <div class="d-flex flex-wrap">
                         @foreach($news as $new)
                             <div class="card w-100 mb-4">
-                                <div class="card-title mt-3 ml-4 mb-0">{{ $new->title }}</div>
+                                <div class="card-title mt-3 ml-4 mb-0">{{ $new->title }}
+                                    <span class="text-muted text-lowercase">- par {{ $new->user->name }}, le {{ $new->created_at->format('d/m/Y') }}</span>
+                                </div>
                                 <div class="card-body md-render">
                                     {{ $new->content }}
                                 </div>
