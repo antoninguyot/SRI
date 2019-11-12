@@ -23921,6 +23921,7 @@ select.form-control.border-danger-muted:focus, select.border-danger-muted:focus,
     text-align: left; }
 
 .auth-page .auth-left-wrapper {
+    background-image: url('../images/background.jpg');
     width: 100%;
     height: 100%;
     background-size: cover; }
