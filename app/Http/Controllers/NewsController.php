@@ -44,7 +44,7 @@ class NewsController extends Controller
     {
         News::create(array_merge(
             $request->validated(),
-            ['staff_id' => Auth()->user()]
+            ['staff_id' => Auth()->id()]
         ));
 
         return redirect(route('news.index'));
