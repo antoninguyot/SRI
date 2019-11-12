@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
             <label>Commence le</label>
-            <input type="text" class="form-control @error('begins_at')form-control-danger @enderror" name="begins_at"
+            <input type="text" class="form-control datepicker @error('begins_at')form-control-danger @enderror" name="begins_at"
                    placeholder="jj/mm/aa" value="{{ $exchange->begins_at ?? old('begins_at') ?? '' }}">
             @error('begins_at')
             <label class="error mt-2 text-danger">{{ $message }}</label>
@@ -33,7 +33,7 @@
         </div>
         <div class="form-group">
             <label>Se termine le</label>
-            <input type="text" class="form-control @error('ends_at')form-control-danger @enderror" name="ends_at"
+            <input type="text" class="form-control datepicker @error('ends_at')form-control-danger @enderror" name="ends_at"
                    placeholder="jj/mm/aa" value="{{$exchange->ends_at ?? old('ends_at') ?? '' }}">
             @error('ends_at')
             <label class="error mt-2 text-danger">{{ $message }}</label>
