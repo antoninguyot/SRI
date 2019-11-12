@@ -31,7 +31,7 @@
                     @foreach($news as $new)
                         <tr>
                             <th>{{ $new->title }}</th>
-                            <td>{{ $new->created_at }}</td>
+                            <td>{{ $new->created_at->format('d/m/Y') }}</td>
                             <td class="text-right w-10">
                                 <a href="{{ route('news.edit', $new->id) }}" class="btn btn-primary">
                                     <i class="feather-16" data-feather="edit"></i> Modifier

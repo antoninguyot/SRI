@@ -9,6 +9,9 @@
                     <div class="search-form">
                         <p>Service des relations internationales : {{ config('app.university') }}</p>
                     </div>
+                    <div class="navbar-nav my-auto">
+                        <a href="{{ route('login') }}">Administration</a>
+                    </div>
                 </div>
             </nav>
 
