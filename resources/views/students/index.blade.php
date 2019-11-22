@@ -16,7 +16,7 @@
                     <thead>
                     <tr>
                         <th>Nom</th>
-                        <th>Adresse mail</th>
+                        <th>Prénom</th>
                         <th>Nationalité</th>
                         <th>Type</th>
                         <th></th>
@@ -32,8 +32,8 @@
                     @endif
                     @foreach($students as $student)
                         <tr>
-                            <th>{{ $student->name }}</th>
-                            <td>{{ $student->email ?? 'Aucun email' }}</td>
+                            <th>{{ $student->last_name }}</th>
+                            <th>{{ $student->first_name }}</th>
                             <td>{{ $student->nationality ?? 'Nationalité non spécifiée' }}</td>
                             <td>{{ $student->type }}</td>
                             <td class="text-right w-10">

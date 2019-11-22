@@ -17,8 +17,6 @@
                     <tr>
                         <th>Intitulé</th>
                         <th>Dispensée par</th>
-                        <th>Durée (heures)</th>
-                        <th>Équivalent ECTS</th>
                         <th>Étudiants inscrits</th>
                         <th></th>
                     </tr>
@@ -34,9 +32,7 @@
                     @foreach($studies as $study)
                         <tr>
                             <th>{{ $study->name }}</th>
-                            <th>{{ $study->university }}</th>
-                            <td>{{ $study->duration ?? 'Durée non spécifiée' }}</td>
-                            <td>{{ $study->ects ?? 'ECTS non spécifiés' }}</td>
+                            <td>{{ $study->university }}</td>
                             <td>1</td>
                             <td class="text-right w-10">
                                 <a href="{{ route('studies.edit', $study->id) }}" class="btn btn-primary">

@@ -20,6 +20,7 @@ class CreateStudentsTable extends Migration
             $table->string('email');
             $table->string('nationality', 2)->nullable();
             $table->string('type')->default('local');
+            $table->string('university')->default(config('app.university'));
             $table->timestamps();
         });
     }

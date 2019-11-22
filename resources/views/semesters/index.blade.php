@@ -1,10 +1,10 @@
 @extends('layouts.panel')
 
-@section('title', 'Tous les échanges')
+@section('title', 'Tous les semestres à l\'étranger')
 
 @section('title-right')
-    <a class="btn btn-primary" href="{{ route('exchanges.create') }}">
-        <i data-feather="plus"></i> Nouvel échange
+    <a class="btn btn-primary" href="{{ route('semesters.create') }}">
+        <i data-feather="plus"></i> Nouveau semestre
     </a>
 @endsection
 
@@ -15,34 +15,34 @@
                 <table class="table datatable">
                     <thead>
                     <tr>
-                        <th>Étudiant</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Lieu</th>
                         <th>Formation</th>
-                        <th>Dispensée par</th>
-                        <th>Durée (heures)</th>
                         <th>Statut</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    @if($exchanges->isEmpty())
+                    @if($semesters->isEmpty())
                         <tr>
                             <td colspan="6" class="text-center">
                                 Aucun échange pour l'instant... Ajoutez-en un maintenant.
                             </td>
                         </tr>
                     @endif
-                    @foreach($exchanges as $exchange)
+                    @foreach($semesters as $semester)
                         <tr>
-                            <th>{{ $exchange->student->name }}</th>
-                            <td>{{ $exchange->study->name }}</td>
-                            <td>Université Paris 13</td>
-                            <td>{{ $exchange->study->duration }}</td>
-                            <td>{!! $exchange->badge !!}</td>
+                            <th>{{ $semester->student->first_name }}</th>
+                            <th>{{ $semester->student->last_name}}</th>
+                            <td>{{ $semester->study->university }}</td>
+                            <td>{{ $semester->study->name }}</td>
+                            <td>{!! $semester->badge !!}</td>
                             <td class="text-right w-10">
-                                <a href="{{ route('exchanges.edit', $exchange->id) }}" class="btn btn-primary">
+                                <a href="{{ route('semesters.edit', $semester->id) }}" class="btn btn-primary">
                                     <i class="feather-16" data-feather="edit"></i> Modifier
                                 </a>
-                                <a href="{{ route('exchanges.destroy', $exchange->id) }}" class="btn btn-danger">
+                                <a href="{{ route('semesters.destroy', $semester->id) }}" class="btn btn-danger">
                                     <i class="feather-16" data-feather="trash"></i> Supprimer
                                 </a>
                             </td>

@@ -1,9 +1,9 @@
 @extends('layouts.panel')
 
-@section('title', 'Modifier un échange')
+@section('title', 'Modifier un semestre à l\'étranger')
 
 @section('content')
-    <form action="{{ route('exchanges.update', $exchange->id) }}" method="post">
+    <form action="{{ route('semesters.update', $semester->id) }}" method="post">
         @csrf
         @method('patch')
 
@@ -13,12 +13,12 @@
             </div>
         @endif
 
-        @include('exchanges.form')
+        @include('semesters.form')
 
         <div class="card mt-3">
             <div class="card-body">
-                <button type="submit" class="btn btn-primary mr-2">Modifier l'échange</button>
-                <a class="btn btn-light" href="{{ route('exchanges.index') }}">Annuler</a>
+                <button type="submit" class="btn btn-primary mr-2">Modifier le semestre</button>
+                <a class="btn btn-light" href="{{ route('semesters.index') }}">Annuler</a>
             </div>
         </div>
     </form>

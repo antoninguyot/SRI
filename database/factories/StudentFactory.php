@@ -7,10 +7,9 @@ use Faker\Generator as Faker;
 
 $factory->define(Student::class, function (Faker $faker) {
     return [
-        'first_name' => $faker->firstName,
-        'last_name' => $faker->lastName,
-        'email' => $faker->unique()->safeEmail,
-        'nationality' => $faker->countryCode,
-        'type' => $faker->randomElement(['local', 'foreign'])
+        'first_name' => 'Yiming',
+        'last_name' => 'Song',
+        'email' => 'songyiming1998@gmail.com',
+        'nationality' => 'CN',
     ];
 });

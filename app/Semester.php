@@ -5,7 +5,7 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Exchange extends Model
+class Semester extends Model
 {
     protected $fillable = ['student_id', 'study_id', 'begins_at', 'ends_at'];
 

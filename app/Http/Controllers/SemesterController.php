@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Exchange;
+use App\Semester;
 use App\Http\Requests\ExchangeRequest;
 use App\Student;
 use App\Study;
 use Illuminate\Http\Request;
 
-class ExchangeController extends Controller
+class SemesterController extends Controller
 {
     public function __construct()
     {
@@ -22,9 +22,9 @@ class ExchangeController extends Controller
      */
     public function index()
     {
-        $exchanges = Exchange::all();
+        $semesters = Semester::all();
 
-        return view('exchanges.index', compact('exchanges'));
+        return view('semesters.index', compact('semesters'));
     }
 
     /**
@@ -37,7 +37,7 @@ class ExchangeController extends Controller
         $students = Student::all();
         $studies = Study::all();
 
-        return view('exchanges.create', compact('students', 'studies'));
+        return view('semesters.create', compact('students', 'studies'));
     }
 
     /**
@@ -48,50 +48,50 @@ class ExchangeController extends Controller
      */
     public function store(ExchangeRequest $request)
     {
-        Exchange::create($request->all());
+        Semester::create($request->all());
 
-        return redirect(route('exchanges.index'));
+        return redirect(route('semesters.index'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Exchange  $exchange
+     * @param Semester $semester
      * @return \Illuminate\Http\Response
      */
-    public function edit(Exchange $exchange)
+    public function edit(Semester $semester)
     {
         $students = Student::all();
         $studies = Study::all();
 
-        return view('exchanges.edit', compact('students', 'studies', 'exchange'));
+        return view('semesters.edit', compact('students', 'studies', 'semester'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param ExchangeRequest $request
-     * @param \App\Exchange $exchange
+     * @param Semester $semester
      * @return void
      */
-    public function update(ExchangeRequest $request, Exchange $exchange)
+    public function update(ExchangeRequest $request, Semester $semester)
     {
-        $exchange->update($request->all());
+        $semester->update($request->all());
 
-        return redirect(route('exchanges.edit', $exchange->id))->with('success', 'Échange modifié avec succès.');
+        return redirect(route('semesters.edit', $semester->id))->with('success', 'Échange modifié avec succès.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Exchange $exchange
+     * @param \App\Semester $exchange
      * @return void
      * @throws \Exception
      */
-    public function destroy(Exchange $exchange)
+    public function destroy(Semester $exchange)
     {
         $exchange->delete();
 
-        return redirect(route('exchanges.index'));
+        return redirect(route('semesters.index'));
     }
 }

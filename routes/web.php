@@ -19,8 +19,9 @@ Auth::routes();
 Route::get('/', 'WelcomeController@news');
 
 Route::get('dashboard', 'DashboardController@show')->name('dashboard');
+Route::get('stats', 'StatController@show')->name('stats');
 
 Route::resource('news', 'NewsController');
 Route::resource('studies', 'StudyController');
 Route::resource('students', 'StudentController');
-Route::resource('exchanges', 'ExchangeController');
+Route::resource('semesters', 'SemesterController');

@@ -64,5 +64,13 @@
                 </div>
             </div>
         </div>
+        <div class="form-group">
+            <label>Université</label>
+            <input type="text" class="form-control @error('university')form-control-danger @enderror" name="university"
+                   placeholder="Adresse mail" value="{{ $student->university ?? old('university') ?? '' }}">
+            @error('university')
+            <label class="error mt-2 text-danger">{{ $message }}</label>
+            @enderror
+        </div>
     </div>
 </div>
