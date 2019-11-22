@@ -26,3 +26,4 @@ Route::resource('studies', 'StudyController');
 Route::resource('students', 'StudentController');
 Route::resource('semesters', 'SemesterController');
 Route::resource('internships', 'InternshipController');
+Route::resource('orders', 'OrderController');
