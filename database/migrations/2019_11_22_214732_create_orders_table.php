@@ -18,7 +18,6 @@ class CreateOrdersTable extends Migration
             $table->string('designation');
             $table->string('supplier');
             $table->float('value');
-            $table->string('currency');
             $table->string('quantity');
             $table->string('date');
             $table->timestamps();

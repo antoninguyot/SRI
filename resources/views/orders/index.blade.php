@@ -34,7 +34,7 @@
                         <tr>
                             <th>{{ $order->designation }}</th>
                             <td>{{ $order->supplier }}</td>
-                            <td>{{ $order->value }} {{ $order->currency }}</td>
+                            <td>{{ $order->value }} {{ config('app.currency.symbol') }}</td>
                             <td>{{ $order->quantity }}</td>
                             <td class="text-right w-10">
                                 <a href="{{ route('orders.edit', $order->id) }}" class="btn btn-primary">

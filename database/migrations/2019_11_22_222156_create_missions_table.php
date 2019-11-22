@@ -15,6 +15,13 @@ class CreateMissionsTable extends Migration
     {
         Schema::create('missions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('location');
+            $table->string('purpose');
+            $table->float('cost');
+            $table->string('begins_at');
+            $table->string('ends_at');
             $table->timestamps();
         });
     }

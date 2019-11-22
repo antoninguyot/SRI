@@ -26,21 +26,25 @@
             <label class="error mt-2 text-danger">{{ $message }}</label>
             @enderror
         </div>
-        <div class="form-group">
-            <label>Commence le</label>
-            <input type="text" class="form-control datepicker @error('begins_at')form-control-danger @enderror" name="begins_at"
-                   placeholder="jj/mm/aa" value="{{ $semester->begins_at ?? old('begins_at') ?? '' }}">
-            @error('begins_at')
-            <label class="error mt-2 text-danger">{{ $message }}</label>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label>Se termine le</label>
-            <input type="text" class="form-control datepicker @error('ends_at')form-control-danger @enderror" name="ends_at"
-                   placeholder="jj/mm/aa" value="{{ $semester->ends_at ?? old('ends_at') ?? '' }}">
-            @error('ends_at')
-            <label class="error mt-2 text-danger">{{ $message }}</label>
-            @enderror
+        <div class="row">
+            <div class="form-group col-lg-6 col-md-12">
+                <label>Commence le</label>
+                <input type="text" class="form-control datepicker @error('begins_at')form-control-danger @enderror"
+                       name="begins_at"
+                       placeholder="jj/mm/aa" value="{{ $semester->begins_at ?? old('begins_at') ?? '' }}">
+                @error('begins_at')
+                <label class="error mt-2 text-danger">{{ $message }}</label>
+                @enderror
+            </div>
+            <div class="form-group col-lg-6 col-md-12">
+                <label>Se termine le</label>
+                <input type="text" class="form-control datepicker @error('ends_at')form-control-danger @enderror"
+                       name="ends_at"
+                       placeholder="jj/mm/aa" value="{{ $semester->ends_at ?? old('ends_at') ?? '' }}">
+                @error('ends_at')
+                <label class="error mt-2 text-danger">{{ $message }}</label>
+                @enderror
+            </div>
         </div>
     </div>
 </div>

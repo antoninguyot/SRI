@@ -46,7 +46,7 @@ class InternshipController extends Controller
      */
     public function store(InternshipRequest $request)
     {
-        Internship::create($request->all());
+        Internship::create($request->validated());
 
         return redirect(route('internships.index'));
     }
@@ -74,7 +74,7 @@ class InternshipController extends Controller
      */
     public function update(InternshipRequest $request, Internship $internship)
     {
-        $internship->update($request->all());
+        $internship->update($request->validated());
 
         return redirect(route('internships.edit', $internship->id))->with('success', 'Échange modifié avec succès.');
     }

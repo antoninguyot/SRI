@@ -48,7 +48,7 @@ class SemesterController extends Controller
      */
     public function store(SemesterRequest $request)
     {
-        Semester::create($request->all());
+        Semester::create($request->validated());
 
         return redirect(route('semesters.index'));
     }
@@ -76,7 +76,7 @@ class SemesterController extends Controller
      */
     public function update(SemesterRequest $request, Semester $semester)
     {
-        $semester->update($request->all());
+        $semester->update($request->validated());
 
         return redirect(route('semesters.edit', $semester->id))->with('success', 'Échange modifié avec succès.');
     }

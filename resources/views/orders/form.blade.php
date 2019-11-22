@@ -20,28 +20,25 @@
         <div class="row">
             <div class="form-group col-6">
                 <label>Valeur</label>
+                <div class="input-group">
                 <input type="number" step="0.01" class="form-control @error('value')form-control-danger @enderror"
                        name="value" placeholder="Valeur unitaire" value="{{ $order->value ?? old('value') ?? '' }}">
+                    <div class="input-group-append">
+                        <span class="input-group-text">{{ config('app.currency.symbol') }}</span>
+                    </div>
+                </div>
                 @error('value')
                 <label class="error mt-2 text-danger">{{ $message }}</label>
                 @enderror
             </div>
             <div class="form-group col-6">
-                <label>Devise</label>
-                <input type="text" class="form-control @error('currency')form-control-danger @enderror"
-                       name="currency" placeholder="Devise" value="{{ $order->currency ?? old('currency') ?? '' }}">
-                @error('currency')
+                <label>Quantité</label>
+                <input type="number" step="1" class="form-control @error('quantity')form-control-danger @enderror" name="quantity"
+                       placeholder="Quantité d'achat" value="{{ $order->quantity ?? old('quantity') ?? '' }}">
+                @error('quantity')
                 <label class="error mt-2 text-danger">{{ $message }}</label>
                 @enderror
             </div>
-        </div>
-        <div class="form-group">
-            <label>Quantité</label>
-            <input type="number" step="1" class="form-control @error('quantity')form-control-danger @enderror" name="quantity"
-                   placeholder="Quantité d'achat" value="{{ $order->quantity ?? old('quantity') ?? '' }}">
-            @error('quantity')
-            <label class="error mt-2 text-danger">{{ $message }}</label>
-            @enderror
         </div>
         <div class="form-group">
             <label>Date</label>

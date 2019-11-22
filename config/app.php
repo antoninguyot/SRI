@@ -2,6 +2,10 @@
 
 return [
 
+    'currency' => [
+        'name' => env('CURRENCY_NAME'),
+        'symbol' => env('CURRENCY_SYMBOL')
+    ],
     'university' => env('UNIV_NAME'),
 
     /*

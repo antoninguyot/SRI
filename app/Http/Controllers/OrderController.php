@@ -42,7 +42,7 @@ class OrderController extends Controller
      */
     public function store(OrderRequest $request)
     {
-        Order::create($request->all());
+        Order::create($request->validated());
 
         return redirect(route('orders.index'));
     }
@@ -67,7 +67,7 @@ class OrderController extends Controller
      */
     public function update(OrderRequest $request, Order $order)
     {
-        $order->update($request->all());
+        $order->update($request->validated());
 
         return redirect(route('orders.edit', $order->id))->with('success', 'Commande modifiée avec succès.');
     }

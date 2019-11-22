@@ -56,7 +56,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="{{ route('missions.index') }}" class="nav-link">
             <i class="link-icon" data-feather="map"></i>
             <span class="link-title">Missions</span>
         </a>
