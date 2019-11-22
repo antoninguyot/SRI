@@ -1,11 +1,14 @@
 <div class="card">
     <div class="card-body">
-        <h6 class="card-title">Paramètres de du semestre</h6>
+        <h6 class="card-title">Paramètres du semestre</h6>
         <div class="form-group">
             <label>Étudiant</label>
             <select class="form-control select2 @error('student_id')form-control-danger @enderror" name="student_id">
                 @foreach($students as $student)
-                    <option value="{{ $student->id }}">{{ $student->name }}</option>
+                    <option value="{{ $student->id }}"
+                            @if(isset($semester) and $semester->student_id == $student->id)selected @endif>
+                        {{ $student->name }}
+                    </option>
                 @endforeach
             </select>
             @error('student_id')

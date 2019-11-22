@@ -19,7 +19,7 @@ class StudyController extends Controller
      */
     public function index()
     {
-        $studies = Study::all();
+        $studies = Study::orderBy('created_at', 'desc')->get();
         return view('studies.index', compact('studies'));
     }
 

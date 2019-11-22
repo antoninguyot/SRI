@@ -20,7 +20,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::all();
+        $news = News::orderBy('created_at', 'desc')->get();
         return view('news.index', compact('news'));
     }
 
@@ -44,7 +44,7 @@ class NewsController extends Controller
     {
         News::create(array_merge(
             $request->validated(),
-            ['staff_id' => Auth()->id()]
+            ['user_id' => Auth()->id()]
         ));
 
         return redirect(route('news.index'));

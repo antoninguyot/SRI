@@ -29,7 +29,7 @@
     <li class="nav-item nav-category">Échanges</li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#" role="button">
+        <a class="nav-link" href="{{ route('internships.index') }}" role="button">
             <i class="link-icon" data-feather="briefcase"></i>
             <span class="link-title">Stages</span>
         </a>

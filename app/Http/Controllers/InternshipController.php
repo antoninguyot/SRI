@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Internship;
-use Illuminate\Http\Request;
+use App\Http\Requests\InternshipRequest;
+use App\Student;
+use App\Study;
 
 class InternshipController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,9 @@ class InternshipController extends Controller
      */
     public function index()
     {
-        //
+        $internships = Internship::orderBy('created_at', 'desc')->get();
+
+        return view('internships.index', compact('internships'));
     }
 
     /**
@@ -24,62 +33,63 @@ class InternshipController extends Controller
      */
     public function create()
     {
-        //
+        $students = Student::all();
+
+        return view('internships.create', compact('students'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param InternshipRequest $request
+     * @return void
      */
-    public function store(Request $request)
+    public function store(InternshipRequest $request)
     {
-        //
-    }
+        Internship::create($request->all());
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Internship  $internship
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Internship $internship)
-    {
-        //
+        return redirect(route('internships.index'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Internship  $internship
+     * @param Internship $internship
      * @return \Illuminate\Http\Response
      */
     public function edit(Internship $internship)
     {
-        //
+        $students = Student::all();
+        $studies = Study::all();
+
+        return view('internships.edit', compact('students', 'studies', 'internship'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Internship  $internship
-     * @return \Illuminate\Http\Response
+     * @param InternshipRequest $request
+     * @param Internship $internship
+     * @return void
      */
-    public function update(Request $request, Internship $internship)
+    public function update(InternshipRequest $request, Internship $internship)
     {
-        //
+        $internship->update($request->all());
+
+        return redirect(route('internships.edit', $internship->id))->with('success', 'Échange modifié avec succès.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Internship  $internship
-     * @return \Illuminate\Http\Response
+     * @param \App\Internship $exchange
+     * @return void
+     * @throws \Exception
      */
-    public function destroy(Internship $internship)
+    public function destroy(Internship $exchange)
     {
-        //
+        $exchange->delete();
+
+        return redirect(route('internships.index'));
     }
 }

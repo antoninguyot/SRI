@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ExchangeRequest extends FormRequest
+class SemesterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,7 +27,7 @@ class ExchangeRequest extends FormRequest
             'student_id' => ['required', 'exists:students,id'],
             'study_id' => ['required', 'exists:studies,id'],
             'begins_at' => ['date_format:d/m/Y'],
-            'endss_at' => ['date_format:d/m/Y'],
+            'ends_at' => ['date_format:d/m/Y'],
         ];
     }
 }

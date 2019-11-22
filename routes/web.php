@@ -25,3 +25,4 @@ Route::resource('news', 'NewsController');
 Route::resource('studies', 'StudyController');
 Route::resource('students', 'StudentController');
 Route::resource('semesters', 'SemesterController');
+Route::resource('internships', 'InternshipController');

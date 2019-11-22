@@ -15,6 +15,11 @@ class CreateInternshipsTable extends Migration
     {
         Schema::create('internships', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('student_id');
+            $table->string('company');
+            $table->string('country');
+            $table->string('begins_at');
+            $table->string('ends_at');
             $table->timestamps();
         });
     }

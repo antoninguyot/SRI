@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Semester;
-use App\Http\Requests\ExchangeRequest;
+use App\Http\Requests\SemesterRequest;
 use App\Student;
 use App\Study;
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ class SemesterController extends Controller
      */
     public function index()
     {
-        $semesters = Semester::all();
+        $semesters = Semester::orderBy('created_at', 'desc')->get();
 
         return view('semesters.index', compact('semesters'));
     }
@@ -43,10 +43,10 @@ class SemesterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param ExchangeRequest $request
+     * @param SemesterRequest $request
      * @return void
      */
-    public function store(ExchangeRequest $request)
+    public function store(SemesterRequest $request)
     {
         Semester::create($request->all());
 
@@ -70,11 +70,11 @@ class SemesterController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param ExchangeRequest $request
+     * @param SemesterRequest $request
      * @param Semester $semester
      * @return void
      */
-    public function update(ExchangeRequest $request, Semester $semester)
+    public function update(SemesterRequest $request, Semester $semester)
     {
         $semester->update($request->all());
 
