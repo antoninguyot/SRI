@@ -2,7 +2,7 @@
     <li class="nav-item nav-category">Général</li>
     <li class="nav-item">
         <a href="{{ route('dashboard') }}" class="nav-link">
-            <i class="link-icon" data-feather="grid"></i>
+            <i class="link-icon" data-feather="home"></i>
             <span class="link-title">Accueil</span>
         </a>
     </li>
@@ -36,7 +36,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ route('semesters.index') }}" role="button">
-            <i class="link-icon" data-feather="send"></i>
+            <i class="link-icon" data-feather="globe"></i>
             <span class="link-title">Semestres étr.</span>
         </a>
     </li>
@@ -50,6 +50,12 @@
     <li class="nav-item nav-category">Budget</li>
 
     <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="link-icon" data-feather="grid"></i>
+            <span class="link-title">Vue d'ensemble</span>
+        </a>
+    </li>
+    <li class="nav-item">
         <a href="{{ route('orders.index') }}" class="nav-link">
             <i class="link-icon" data-feather="box"></i>
             <span class="link-title">Commandes</span>
@@ -62,8 +68,8 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="link-icon" data-feather="home"></i>
+        <a href="{{ route('transfers.index') }}" class="nav-link">
+            <i class="link-icon" data-feather="send"></i>
             <span class="link-title">Virements</span>
         </a>
     </li>

@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
         factory(App\Internship::class)->create();
 
         factory(App\Order::class)->create();
+        factory(App\Mission::class)->create();
+        factory(App\Transfer::class)->create();
     }
 }

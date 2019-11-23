@@ -62770,8 +62770,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var datatables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! datatables */ "./node_modules/datatables/media/js/jquery.dataTables.js");
 /* harmony import */ var datatables__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(datatables__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _dt_bs4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dt-bs4 */ "./resources/js/dt-bs4.js");
-/* harmony import */ var _dt_bs4__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_dt_bs4__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _datatables_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./datatables/bootstrap */ "./resources/js/datatables/bootstrap.js");
+/* harmony import */ var _datatables_bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_datatables_bootstrap__WEBPACK_IMPORTED_MODULE_1__);
 
 
 $(function () {
@@ -62784,29 +62784,10 @@ $(function () {
 
 /***/ }),
 
-/***/ "./resources/js/datepicker.js":
-/*!************************************!*\
-  !*** ./resources/js/datepicker.js ***!
-  \************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap-datepicker */ "./node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js");
-/* harmony import */ var bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_0__);
-
-$('.datepicker').datepicker({
-  format: "dd/mm/yyyy",
-  autoclose: true
-});
-
-/***/ }),
-
-/***/ "./resources/js/dt-bs4.js":
-/*!********************************!*\
-  !*** ./resources/js/dt-bs4.js ***!
-  \********************************/
+/***/ "./resources/js/datatables/bootstrap.js":
+/*!**********************************************!*\
+  !*** ./resources/js/datatables/bootstrap.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -62982,7 +62963,26 @@ $jscomp.polyfill("Array.prototype.find", function (a) {
 
   return d;
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./resources/js/datepicker.js":
+/*!************************************!*\
+  !*** ./resources/js/datepicker.js ***!
+  \************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap-datepicker */ "./node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js");
+/* harmony import */ var bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_0__);
+
+$('.datepicker').datepicker({
+  format: "dd/mm/yyyy",
+  autoclose: true
+});
 
 /***/ }),
 

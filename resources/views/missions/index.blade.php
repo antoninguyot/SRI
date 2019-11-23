@@ -21,6 +21,7 @@
                         <th>Lieu</th>
                         <th>Coût</th>
                         <th>Statut</th>
+                        <th>Dates</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -40,6 +41,7 @@
                             <td>{{ $mission->location }}</td>
                             <td>{{ $mission->cost }} {{ config('app.currency.symbol') }}</td>
                             <td>{!! $mission->badge !!}</td>
+                            <td>{{ $mission->begins_at }} au {{ $mission->ends_at }}</td>
                             <td class="text-right w-10">
                                 <a href="{{ route('missions.edit', $mission->id) }}" class="btn btn-primary">
                                     <i class="feather-16" data-feather="edit"></i> Modifier

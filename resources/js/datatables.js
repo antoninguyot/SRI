@@ -1,5 +1,5 @@
 import 'datatables';
-import './dt-bs4';
+import './datatables/bootstrap';
 
 $(() => {
     $('.datatable').dataTable({
