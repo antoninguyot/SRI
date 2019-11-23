@@ -50,7 +50,7 @@
     <li class="nav-item nav-category">Budget</li>
 
     <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="{{ route('budget') }}" class="nav-link">
             <i class="link-icon" data-feather="grid"></i>
             <span class="link-title">Vue d'ensemble</span>
         </a>
