@@ -27,7 +27,7 @@
             <label>Pays</label>
             <select class="form-control select2 @error('country')form-control-danger @enderror" name="country">
                 @foreach(config('cc') as $cc => $name)
-                    <option value="{{ $cc }}" @if(isset($internship) and $internship->country == $name)selected @endif>
+                    <option value="{{ $cc }}" @if(isset($internship) and $internship->country == $cc)selected @endif>
                         {{ $name }}
                     </option>
                 @endforeach
