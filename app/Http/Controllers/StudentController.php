@@ -78,5 +78,7 @@ class StudentController extends Controller
     public function destroy(Student $student)
     {
         $student->delete();
+
+        return redirect(route('students.index'));
     }
 }

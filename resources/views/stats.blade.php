@@ -2,60 +2,35 @@
 
 @section('title', 'Service des relations internationales')
 
+@push('js')
+    <script>
+        new Chart($('#distrib'), {
+            type: 'pie',
+            data: {
+                datasets: [{
+                    data: [{{ $semesters_count }}, {{ $internships_count }}],
+                    backgroundColor: ["#4d8af0", "#f77eb9"],
+                }],
+                labels: ['Semestres', 'Stages'],
+            }
+        });
+    </script>
+@endpush
+
 @section('content')
     <div class="row">
-        <div class="col-lg-4 col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-8">
-                            <h6 class="card-title mb-0">Étudiants à l'étranger</h6>
-                            <h3 class="mb-2">10</h3>
-                        </div>
-                        <div class="col-4 text-center my-auto">
-                            <i class="link-icon feather-48" data-feather="users"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-8">
-                            <h6 class="card-title mb-0">Heures à l'étranger</h6>
-                            <h3 class="mb-2">{{ $total_abroad_hours }} h</h3>
-                        </div>
-                        <div class="col-4 text-center my-auto">
-                            <i class="link-icon feather-48" data-feather="arrow-up"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-8">
-                            <h6 class="card-title mb-0">Heures passées ici</h6>
-                            <h3 class="mb-2">250 h</h3>
-                        </div>
-                        <div class="col-4 text-center my-auto">
-                            <i class="link-icon feather-48" data-feather="arrow-down"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-3">
         <div class="col-lg-6 col-md-12">
             <div class="card">
-                <h5 class="card-title">Formations les plus fréquentées à {{ config('app.university') }}</h5>
                 <div class="card-body">
+                    <h5 class="card-title">Répartition des relations à l'étranger</h5>
+                    <canvas id="distrib"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Formations les plus fréquentées à {{ config('app.university') }}</h5>
                     <div class="table-responsive">
                         <table class="table datatable">
                             <thead>

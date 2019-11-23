@@ -84,13 +84,13 @@ class SemesterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Semester $exchange
+     * @param \App\Semester $semester
      * @return void
      * @throws \Exception
      */
-    public function destroy(Semester $exchange)
+    public function destroy(Semester $semester)
     {
-        $exchange->delete();
+        $semester->delete();
 
         return redirect(route('semesters.index'));
     }

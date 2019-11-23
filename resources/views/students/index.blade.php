@@ -9,6 +9,8 @@
 @endsection
 
 @section('content')
+    @include('layouts.delete-modal')
+
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">
@@ -40,9 +42,10 @@
                                 <a href="{{ route('students.edit', $student->id) }}" class="btn btn-primary">
                                     <i class="feather-16" data-feather="edit"></i> Modifier
                                 </a>
-                                <a href="{{ route('students.destroy', $student->id) }}" class="btn btn-danger">
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"
+                                        data-delete="students" data-id="{{ $student->id }}">
                                     <i class="feather-16" data-feather="trash"></i> Supprimer
-                                </a>
+                                </button>
                             </td>
                         </tr>
                     @endforeach

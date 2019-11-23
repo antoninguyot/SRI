@@ -9,6 +9,8 @@
 @endsection
 
 @section('content')
+    @include('layouts.delete-modal')
+
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">
@@ -33,8 +35,8 @@
                     @endif
                     @foreach($internships as $internship)
                         <tr>
-                            <th>{{ $internship->student->first_name }}</th>
-                            <th>{{ $internship->student->last_name}}</th>
+                            <th>{{ $internship->student->first_name ?? 'Pas de prénom' }}</th>
+                            <th>{{ $internship->student->last_name ?? 'Pas de nom' }}</th>
                             <td>{{ $internship->company }}</td>
                             <td>{{ config('cc.' . $internship->country) }}</td>
                             <td>{!! $internship->badge !!}</td>
@@ -42,9 +44,10 @@
                                 <a href="{{ route('internships.edit', $internship->id) }}" class="btn btn-primary">
                                     <i class="feather-16" data-feather="edit"></i> Modifier
                                 </a>
-                                <a href="{{ route('internships.destroy', $internship->id) }}" class="btn btn-danger">
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"
+                                        data-delete="internships" data-id="{{ $internship->id }}">
                                     <i class="feather-16" data-feather="trash"></i> Supprimer
-                                </a>
+                                </button>
                             </td>
                         </tr>
                     @endforeach

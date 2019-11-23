@@ -9,6 +9,8 @@
 @endsection
 
 @section('content')
+    @include('layouts.delete-modal')
+
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">
@@ -28,7 +30,7 @@
                     <tbody>
                     @if($missions->isEmpty())
                         <tr>
-                            <td colspan="6" class="text-center">
+                            <td colspan="8" class="text-center">
                                 Aucune mission pour l'instant... Ajoutez-en une maintenant.
                             </td>
                         </tr>
@@ -46,9 +48,10 @@
                                 <a href="{{ route('missions.edit', $mission->id) }}" class="btn btn-primary">
                                     <i class="feather-16" data-feather="edit"></i> Modifier
                                 </a>
-                                <a href="{{ route('missions.destroy', $mission->id) }}" class="btn btn-danger">
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"
+                                        data-delete="missions" data-id="{{ $mission->id }}">
                                     <i class="feather-16" data-feather="trash"></i> Supprimer
-                                </a>
+                                </button>
                             </td>
                         </tr>
                     @endforeach

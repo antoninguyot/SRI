@@ -96492,6 +96492,8 @@ __webpack_require__(/*! ./datatables */ "./resources/js/datatables.js");
 
 __webpack_require__(/*! ./chartjs */ "./resources/js/chartjs.js");
 
+__webpack_require__(/*! ./delete-modal */ "./resources/js/delete-modal.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -96766,6 +96768,24 @@ $('.datepicker').datepicker({
   format: "dd/mm/yyyy",
   todayHighlight: true,
   autoclose: true
+});
+
+/***/ }),
+
+/***/ "./resources/js/delete-modal.js":
+/*!**************************************!*\
+  !*** ./resources/js/delete-modal.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$('#delete-modal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget);
+  var name = button.data('delete');
+  var id = button.data('id');
+  var form = $(this).find('form');
+  var action = form.attr('action');
+  form.attr('action', action + '/' + name + '/' + id);
 });
 
 /***/ }),

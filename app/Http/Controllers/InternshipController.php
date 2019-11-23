@@ -82,13 +82,13 @@ class InternshipController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Internship $exchange
+     * @param \App\Internship $internship
      * @return void
      * @throws \Exception
      */
-    public function destroy(Internship $exchange)
+    public function destroy(Internship $internship)
     {
-        $exchange->delete();
+        $internship->delete();
 
         return redirect(route('internships.index'));
     }
