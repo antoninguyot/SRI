@@ -96764,6 +96764,7 @@ __webpack_require__.r(__webpack_exports__);
 
 $('.datepicker').datepicker({
   format: "dd/mm/yyyy",
+  todayHighlight: true,
   autoclose: true
 });
 
