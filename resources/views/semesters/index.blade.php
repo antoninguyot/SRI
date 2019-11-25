@@ -35,8 +35,8 @@
                     @endif
                     @foreach($semesters as $semester)
                         <tr>
-                            <th>{{ $semester->student->first_name }}</th>
-                            <th>{{ $semester->student->last_name}}</th>
+                            <th>{{ $semester->student->first_name ?? 'Pas de prénom' }}</th>
+                            <th>{{ $semester->student->last_name ?? 'Pas de nom' }}</th>
                             <td>{{ $semester->study->university }}</td>
                             <td>{{ $semester->study->name }}</td>
                             <td>{!! $semester->badge !!}</td>
