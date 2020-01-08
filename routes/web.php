@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('error', function(){
+    throw new Exception('This is just a test exception');
+});
+
 Route::get('/', 'WelcomeController@news');
 
 Route::get('dashboard', 'DashboardController@show')->name('dashboard');
