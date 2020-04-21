@@ -19,7 +19,7 @@
                     <select class="form-control select2 @error('type')form-control-danger @enderror"
                             name="type">
                         <option value="0">Entrante</option>
-                        <option value="1">Sortante</option>
+                        <option value="1" @if(isset($week) and $week->type == 1)selected @endif>Sortante</option>
                     </select>
                     @error('type')
                     <label class="error mt-2 text-danger">{{ $message }}</label>
