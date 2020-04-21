@@ -67,7 +67,7 @@ class MissionController extends Controller
      */
     public function update(MissionRequest $request, Mission $mission)
     {
-        $mission->update($request->all());
+        $mission->update($request->validated());
 
         return redirect(route('missions.edit', $mission->id))->with('success', 'Commande modifiée avec succès.');
     }

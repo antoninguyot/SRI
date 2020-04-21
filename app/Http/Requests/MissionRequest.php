@@ -29,6 +29,7 @@ class MissionRequest extends FormRequest
             'location' => ['required', 'string'],
             'purpose' => ['required', 'string'],
             'cost' => ['required', 'numeric'],
+            'type' => ['required', 'string'],
             'begins_at' => ['date_format:d/m/Y'],
             'ends_at' => ['date_format:d/m/Y'],
         ];

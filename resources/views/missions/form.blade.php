@@ -25,34 +25,61 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <label>Lieu</label>
-            <input type="text" class="form-control @error('location')form-control-danger @enderror" name="location"
-                   placeholder="Lieu du déplacement" value="{{ $mission->location ?? old('location') ?? '' }}">
-            @error('location')
-            <label class="error mt-2 text-danger">{{ $message }}</label>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label>Motif</label>
-            <input type="text" class="form-control @error('purpose')form-control-danger @enderror" name="purpose"
-                   placeholder="Motif du déplacement" value="{{ $mission->purpose ?? old('purpose') ?? '' }}">
-            @error('purpose')
-            <label class="error mt-2 text-danger">{{ $message }}</label>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label>Coût total</label>
-            <div class="input-group">
-                <input type="number" step="0.01" class="form-control @error('cost')form-control-danger @enderror"
-                       name="cost" placeholder="Coût de la mission" value="{{ $mission->cost ?? old('cost') ?? '' }}">
-                <div class="input-group-append">
-                    <span class="input-group-text">{{ config('app.currency.symbol') }}</span>
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <div class="form-group">
+                    <label>Type de mission</label>
+                    <select class="form-control select2 @error('type')form-control-danger @enderror" name="type"
+                            required>
+                        <option>Entrante</option>
+                        <option @if(isset($mission) and $mission->type == 'Sortante')selected @endif>Sortante</option>
+                    </select>
+                    @error('type')
+                    <label class="error mt-2 text-danger">{{ $message }}</label>
+                    @enderror
                 </div>
             </div>
-            @error('cost')
-            <label class="error mt-2 text-danger">{{ $message }}</label>
-            @enderror
+            <div class="col-md-12 col-lg-6">
+                <div class="form-group">
+                    <label>Lieu</label>
+                    <input type="text" class="form-control @error('location')form-control-danger @enderror"
+                           name="location"
+                           placeholder="Lieu du déplacement" value="{{ $mission->location ?? old('location') ?? '' }}">
+                    @error('location')
+                    <label class="error mt-2 text-danger">{{ $message }}</label>
+                    @enderror
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <div class="form-group">
+                    <label>Motif</label>
+                    <input type="text" class="form-control @error('purpose')form-control-danger @enderror"
+                           name="purpose"
+                           placeholder="Motif du déplacement" value="{{ $mission->purpose ?? old('purpose') ?? '' }}">
+                    @error('purpose')
+                    <label class="error mt-2 text-danger">{{ $message }}</label>
+                    @enderror
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <div class="form-group">
+                    <label>Coût total</label>
+                    <div class="input-group">
+                        <input type="number" step="0.01"
+                               class="form-control @error('cost')form-control-danger @enderror"
+                               name="cost" placeholder="Coût de la mission"
+                               value="{{ $mission->cost ?? old('cost') ?? '' }}">
+                        <div class="input-group-append">
+                            <span class="input-group-text">{{ config('app.currency.symbol') }}</span>
+                        </div>
+                    </div>
+                    @error('cost')
+                    <label class="error mt-2 text-danger">{{ $message }}</label>
+                    @enderror
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="form-group col-lg-6 col-md-12">
