@@ -29,19 +29,24 @@
     <li class="nav-item nav-category">Échanges</li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('internships.index') }}" role="button">
-            <i class="link-icon" data-feather="briefcase"></i>
-            <span class="link-title">Stages</span>
+        <a class="nav-link" data-toggle="collapse" href="#mobilities" role="button">
+            <i class="link-icon" data-feather="send"></i>
+            <span class="link-title"> Mobilités</span>
         </a>
+        <div class="collapse" id="mobilities">
+            <ul class="nav sub-menu">
+                <li class="nav-item">
+                    <a href="{{route('internships.index')}}" class="nav-link">Stages</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('semesters.index')}}" class="nav-link">Semestre étranger</a>
+                </li>
+            </ul>
+        </div>
     </li>
+
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('semesters.index') }}" role="button">
-            <i class="link-icon" data-feather="globe"></i>
-            <span class="link-title">Semestres étr.</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#" role="button">
+        <a class="nav-link" href="{{route('weeks.index')}}" role="button">
             <i class="link-icon" data-feather="calendar"></i>
             <span class="link-title">Semaines int.</span>
         </a>

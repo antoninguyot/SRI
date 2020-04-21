@@ -35,3 +35,4 @@ Route::resource('internships', 'InternshipController');
 Route::resource('orders', 'OrderController');
 Route::resource('missions', 'MissionController');
 Route::resource('transfers', 'TransferController');
+Route::resource('weeks', 'IntWeekController');
