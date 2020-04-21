@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Internship extends Model
 {
     use HasPeriod;
-    protected $fillable = ['student_id', 'company', 'country', 'begins_at', 'ends_at'];
+    protected $fillable = ['student_id', 'company', 'country', 'begins_at', 'ends_at', 'type'];
 
     public function student()
     {

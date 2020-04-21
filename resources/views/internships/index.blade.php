@@ -21,6 +21,7 @@
                         <th>Prénom</th>
                         <th>Entreprise</th>
                         <th>Pays</th>
+                        <th>Type</th>
                         <th>Statut</th>
                         <th></th>
                     </tr>
@@ -39,6 +40,7 @@
                             <th>{{ $internship->student->last_name ?? 'Pas de nom' }}</th>
                             <td>{{ $internship->company }}</td>
                             <td>{{ config('cc.' . $internship->country) }}</td>
+                            <td>{{  $internship->type }}</td>
                             <td>{!! $internship->badge !!}</td>
                             <td class="text-right w-10">
                                 <a href="{{ route('internships.edit', $internship->id) }}" class="btn btn-primary">

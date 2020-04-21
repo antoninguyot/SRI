@@ -26,6 +26,7 @@ class SemesterRequest extends FormRequest
         return [
             'student_id' => ['required', 'exists:students,id'],
             'study_id' => ['required', 'exists:studies,id'],
+            'type' => ['required', 'string'],
             'begins_at' => ['date_format:d/m/Y'],
             'ends_at' => ['date_format:d/m/Y'],
         ];

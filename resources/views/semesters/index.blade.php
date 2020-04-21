@@ -21,6 +21,7 @@
                         <th>Prénom</th>
                         <th>Lieu</th>
                         <th>Formation</th>
+                        <th>Type</th>
                         <th>Statut</th>
                         <th></th>
                     </tr>
@@ -39,6 +40,7 @@
                             <th>{{ $semester->student->last_name ?? 'Pas de nom' }}</th>
                             <td>{{ $semester->study->university }}</td>
                             <td>{{ $semester->study->name }}</td>
+                            <td>{{ $semester->type }}</td>
                             <td>{!! $semester->badge !!}</td>
                             <td class="text-right w-10">
                                 <a href="{{ route('semesters.edit', $semester->id) }}" class="btn btn-primary">

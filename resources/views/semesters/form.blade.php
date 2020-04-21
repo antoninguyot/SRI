@@ -1,19 +1,39 @@
 <div class="card">
     <div class="card-body">
         <h6 class="card-title">Paramètres du semestre</h6>
-        <div class="form-group">
-            <label>Étudiant</label>
-            <select class="form-control select2 @error('student_id')form-control-danger @enderror" name="student_id">
-                @foreach($students as $student)
-                    <option value="{{ $student->id }}"
-                            @if(isset($semester) and $semester->student_id == $student->id)selected @endif>
-                        {{ $student->name }}
-                    </option>
-                @endforeach
-            </select>
-            @error('student_id')
-            <label class="error mt-2 text-danger">{{ $message }}</label>
-            @enderror
+        <div class="row">
+            <div class="form-group col-lg-6 col-md-12">
+                <label>Étudiant</label>
+                <select class="form-control select2 @error('student_id')form-control-danger @enderror"
+                        name="student_id">
+                    @foreach($students as $student)
+                        <option value="{{ $student->id }}"
+                                @if(isset($semester) and $semester->student_id == $student->id)selected @endif>
+                            {{ $student->name }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('student_id')
+                <label class="error mt-2 text-danger">{{ $message }}</label>
+                @enderror
+            </div>
+            <div class="form-group col-lg-6 col-md-12">
+                <label>Type de mobilité</label>
+                <select class="form-control select2 @error('type')form-control-danger @enderror"
+                        name="type" data-placeholder="Sélectionnez un type" data-tags="true" required>
+                    <option></option>
+                    @if(isset($semester->type))
+                        <option selected>{{ $semester->type }}</option>
+                    @endif
+                    <option>Erasmus</option>
+                    <option>Erasmus +</option>
+                    <option>Études en France</option>
+                    <option>Autre</option>
+                </select>
+                @error('type')
+                <label class="error mt-2 text-danger">{{ $message }}</label>
+                @enderror
+            </div>
         </div>
         <div class="form-group">
             <label>Formation</label>
