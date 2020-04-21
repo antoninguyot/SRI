@@ -21,6 +21,7 @@
                         <th>Prénom</th>
                         <th>Nationalité</th>
                         <th>Type</th>
+                        <th>Statut boursier</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -38,6 +39,7 @@
                             <th>{{ $student->first_name }}</th>
                             <td>{{ $student->nationality ?? 'Nationalité non spécifiée' }}</td>
                             <td>{{ $student->type }}</td>
+                            <td>{{ $student->scholarship ? 'Boursier' : 'Non boursier' }}</td>
                             <td class="text-right w-10">
                                 <a href="{{ route('students.edit', $student->id) }}" class="btn btn-primary">
                                     <i class="feather-16" data-feather="edit"></i> Modifier

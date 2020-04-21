@@ -28,6 +28,7 @@ class StudentRequest extends FormRequest
             'first_name' => ['required', 'string'],
             'last_name' => ['required', 'string'],
             'email' => ['required', 'email'],
+            'scholarship' => ['required', 'boolean'],
             'nationality' => ['required', Rule::in(array_keys(config('cc')))],
             'type' => ['required', Rule::in(['local', 'foreign'])],
         ];

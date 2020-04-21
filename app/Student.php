@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    protected $fillable = ['first_name', 'last_name', 'email', 'nationality', 'type'];
+    protected $fillable = ['first_name', 'last_name', 'email', 'nationality', 'type', 'scholarship'];
 
     public function exchanges()
     {

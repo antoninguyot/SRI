@@ -5,7 +5,8 @@
             <div class="col-md-12 col-lg-6">
                 <div class="form-group">
                     <label>Prénom</label>
-                    <input type="text" class="form-control @error('first_name')form-control-danger @enderror" name="first_name"
+                    <input type="text" class="form-control @error('first_name')form-control-danger @enderror"
+                           name="first_name"
                            placeholder="Prénom" value="{{ $student->first_name ?? old('first_name') ?? '' }}">
                     @error('first_name')
                     <label class="error mt-2 text-danger">{{ $message }}</label>
@@ -15,7 +16,8 @@
             <div class="col-md-12 col-lg-6">
                 <div class="form-group">
                     <label>Nom</label>
-                    <input type="text" class="form-control @error('last_name')form-control-danger @enderror" name="last_name"
+                    <input type="text" class="form-control @error('last_name')form-control-danger @enderror"
+                           name="last_name"
                            placeholder="Nom de famille" value="{{ $student->last_name ?? old('last_name') ?? '' }}">
                     @error('last_name')
                     <label class="error mt-2 text-danger">{{ $message }}</label>
@@ -69,6 +71,18 @@
             <input type="text" class="form-control @error('university')form-control-danger @enderror" name="university"
                    placeholder="Adresse mail" value="{{ $student->university ?? old('university') ?? '' }}">
             @error('university')
+            <label class="error mt-2 text-danger">{{ $message }}</label>
+            @enderror
+        </div>
+        <label>Statut boursier</label>
+        <div class="form-check form-check-flat form-check-primary">
+            <label class="form-check-label">
+                <input type="hidden" name="scholarship" value="0">
+                <input type="checkbox" class="form-check-input" value="1"
+                       @if(isset($student) and $student->scholarship)checked @endif name="scholarship">
+                Étudiant boursier
+                <i class="input-frame"></i></label>
+            @error('scholarship')
             <label class="error mt-2 text-danger">{{ $message }}</label>
             @enderror
         </div>
