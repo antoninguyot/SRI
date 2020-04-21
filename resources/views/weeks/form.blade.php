@@ -42,9 +42,14 @@
             <div class="col-md-12 col-lg-6">
                 <div class="form-group">
                     <label>Frais d'inscription (par étudiant)</label>
+                    <div class="input-group">
                     <input type="number" step="0.01" class="form-control @error('fee')form-control-danger @enderror"
                            name="fee"
                            placeholder="Frais d'inscriptions" value="{{ $week->fee ?? old('fee') ?? '' }}">
+                        <div class="input-group-append">
+                            <span class="input-group-text">{{ config('app.currency.symbol') }}</span>
+                        </div>
+                    </div>
                     @error('fee')
                     <label class="error mt-2 text-danger">{{ $message }}</label>
                     @enderror
