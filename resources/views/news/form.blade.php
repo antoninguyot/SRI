@@ -1,9 +1,9 @@
 @push('js')
-    <script src="{{ asset('js/simplemde.js') }}"></script>
+    <script src="{{ mix('js/simplemde.js') }}"></script>
 @endpush
 
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/simplemde.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/simplemde.css') }}">
 @endpush
 
 <div class="card">
