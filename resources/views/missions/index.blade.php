@@ -14,7 +14,7 @@
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table datatable">
+                <table class="table datatable-export" data-export-name="Export Missions SRI {{ \Carbon\Carbon::now()->format('d/m/Y H:i') }}">
                     <thead>
                     <tr>
                         <th>Nom</th>
