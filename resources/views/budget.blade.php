@@ -8,10 +8,10 @@
             type: 'pie',
             data: {
                 datasets: [{
-                    data: [{{ $budget }}, {{ $spent }}],
+                    data: [{{ $left }}, {{ $spent }}],
                     backgroundColor: ["#4d8af0", "#f77eb9"],
                 }],
-                labels: ['Ouverts', 'Dépensés'],
+                labels: ['Restants', 'Dépensés'],
             }
         });
 
@@ -57,12 +57,12 @@
                                 </tr>
                                 <tr>
                                     <td class="pt-3">Total</td>
-                                    @if($total > 0)
+                                    @if($left > 0)
                                         <td class="pt-3 text-success">
-                                            + {{ $total }} {{ config('app.currency.symbol') }}</td>
+                                            + {{ $left }} {{ config('app.currency.symbol') }}</td>
                                     @else
                                         <td class="pt-3 text-danger">
-                                            - {{ $total }} {{ config('app.currency.symbol') }}</td>
+                                            - {{ $left }} {{ config('app.currency.symbol') }}</td>
                                     @endif
                                 </tr>
                             </table>

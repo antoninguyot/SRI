@@ -18,8 +18,8 @@ class BudgetController extends Controller
         $transfers = Transfer::all()->sum('amount');
 
         $spent = $orders + $missions + $transfers;
-        $total = $budget - $spent;
+        $left = $budget - $spent;
 
-        return view('budget', compact('budget', 'orders', 'missions', 'transfers', 'spent', 'total'));
+        return view('budget', compact('budget', 'orders', 'missions', 'transfers', 'spent', 'left'));
     }
 }
