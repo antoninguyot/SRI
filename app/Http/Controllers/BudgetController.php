@@ -22,4 +22,15 @@ class BudgetController extends Controller
 
         return view('budget', compact('budget', 'orders', 'missions', 'transfers', 'spent', 'left'));
     }
+
+    public function export()
+    {
+        $operations = collect()
+            ->merge(Order::all())
+            ->merge(Mission::all())
+            ->merge(Transfer::all())
+            ->sortByDesc('created_at');
+
+        return view('export', compact('operations'));
+    }
 }

@@ -25,6 +25,7 @@ Route::get('/', 'WelcomeController@news');
 Route::get('dashboard', 'DashboardController@show')->name('dashboard');
 Route::get('stats', 'StatController@show')->name('stats');
 Route::get('budget', 'BudgetController@show')->name('budget');
+Route::get('export', 'BudgetController@export')->name('budget.export');
 Route::resource('news', 'NewsController');
 
 Route::resource('studies', 'StudyController');

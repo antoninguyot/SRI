@@ -35,8 +35,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <div class="card-header">
+                            <h5 class="font-weight-bold">État des comptes</h5>
+                        </div>
                         <div class="card-body">
-                            <h6 class="card-title">État des comptes</h6>
                             <table class="w-100">
                                 <tr>
                                     <td>Ouverts</td>
@@ -71,8 +73,10 @@
                 </div>
                 <div class="col-12 mt-3">
                     <div class="card">
+                        <div class="card-header">
+                            <h5 class="font-weight-bold">Distribution des dépenses</h5>
+                        </div>
                         <div class="card-body">
-                            <h6 class="card-title">Distribution des dépenses</h6>
                             <canvas id="distrib"></canvas>
                         </div>
                     </div>
@@ -81,9 +85,20 @@
         </div>
         <div class="col-lg-6 col-md-12">
             <div class="card">
+                <div class="card-header">
+                    <h5 class="font-weight-bold">Visualisation des dépenses</h5>
+                </div>
                 <div class="card-body">
-                    <h6 class="card-title">Visualisation des dépenses</h6>
                     <canvas id="spent"></canvas>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h5 class="font-weight-bold">Export des données</h5>
+                </div>
+                <div class="card-body text-center">
+                    <a class="btn btn-primary" href="{{ route('budget.export') }}">Exporter les données budgétaires</a>
                 </div>
             </div>
         </div>

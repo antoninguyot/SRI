@@ -8,8 +8,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <div class="card-header">
+                            <h5 class="font-weight-bold">Derniers stages créés</h5>
+                        </div>
                         <div class="card-body">
-                            <div class="card-title">Derniers stages créés</div>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
@@ -44,8 +46,10 @@
                 </div>
                 <div class="col-12 mt-3">
                     <div class="card">
+                        <div class="card-header">
+                            <h5 class="font-weight-bold">État des comptes</h5>
+                        </div>
                         <div class="card-body">
-                            <h6 class="card-title">État des comptes</h6>
                             <table class="w-100">
                                 <tr>
                                     <td>Ouverts</td>
@@ -116,8 +120,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <div class="card-header">
+                            <h5 class="font-weight-bold">Derniers semstres à l'étranger créés</h5>
+                        </div>
                         <div class="card-body">
-                            <div class="card-title">Derniers semstres à l'étranger créés</div>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
@@ -152,8 +158,10 @@
                 </div>
                 <div class="col-12 mt-3">
                     <div class="card">
+                        <div class="card-header">
+                            <h5 class="font-weight-bold">Formations les plus fréquentées à {{ config('app.university') }}</h5>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">Formations les plus fréquentées à {{ config('app.university') }}</h5>
                             <div class="table-responsive">
                                 <table class="table datatable">
                                     <thead>

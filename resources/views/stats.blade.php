@@ -21,16 +21,20 @@
     <div class="row">
         <div class="col-lg-6 col-md-12">
             <div class="card">
+                <div class="card-header">
+                    <h5 class="font-weight-bold">Répartition des relations à l'étranger</h5>
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">Répartition des relations à l'étranger</h5>
                     <canvas id="distrib"></canvas>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 col-md-12">
             <div class="card">
+                <div class="card-header">
+                    <h5 class="font-weight-bold">Formations les plus fréquentées à {{ config('app.university') }}</h5>
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">Formations les plus fréquentées à {{ config('app.university') }}</h5>
                     <div class="table-responsive">
                         <table class="table datatable">
                             <thead>

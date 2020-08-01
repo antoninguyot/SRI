@@ -19,8 +19,25 @@ $(() => {
         dom: "<'row'<'col-sm-12 col-md-6'B><'col-sm-12 col-md-6'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
         buttons: [
             {
+                extend: 'copy',
+                text: 'Copier',
+                className: 'btn btn-primary',
+                exportOptions: {
+                    columns: 'thead th:not(.noExport)'
+                }
+            },
+            {
                 extend: 'excel',
-                text: 'Exporter au format Excel',
+                text: 'Excel',
+                className: 'btn btn-primary',
+                title: table.data('export-name'),
+                exportOptions: {
+                    columns: 'thead th:not(.noExport)'
+                }
+            },
+            {
+                extend: 'csv',
+                text: 'CSV',
                 className: 'btn btn-primary',
                 title: table.data('export-name'),
                 exportOptions: {
